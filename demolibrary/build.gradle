@@ -1,3 +1,38 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 
@@ -7,7 +42,7 @@ group 'com.androidTeam287' // whatever group name you'd like
 publishing {
     publications {
         Production(MavenPublication) {
-            artifact("$buildDir/outputs/aar/DemoProject-release.aar") // replace with your library name
+            artifact("$buildDir/outputs/aar/demolibrary-release.aar") // replace with your library name
             groupId this.group
             artifactId 'DemoProject' // replace with your library artifact id
             version this.version
