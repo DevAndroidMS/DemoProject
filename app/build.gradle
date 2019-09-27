@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.Priti61'
+group 'com.github.priti61'
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -22,7 +22,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    group='com.github.Priti61'
+
 }
 
 dependencies {
